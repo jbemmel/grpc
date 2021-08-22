@@ -3538,7 +3538,7 @@ grpc_error_handle EdsResponseParse(
             cluster_load_assignment, &locality_size);
     grpc_error_handle error = GRPC_ERROR_NONE;
     for (size_t j = 0; j < locality_size; ++j) {
-      size_t priority;
+      size_t priority = 0;
       XdsApi::EdsUpdate::Priority::Locality locality;
       error = LocalityParse(endpoints[j], &locality, &priority);
       if (error != GRPC_ERROR_NONE) break;
