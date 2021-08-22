@@ -614,7 +614,7 @@ cdef grpc_error* eventlet_run_poll(size_t timeout_ms) with gil:
         # resetting the poller flag if we didn't receive the signal.
         try:
             if not e_poller_hub.switch():
-                return
+                return grpc_error_none()
         except:
             timer.cancel()
             raise
