@@ -1,3 +1,12 @@
+JvB: Merged eventlet support:
+```
+git clone https://github.com/grpc/grpc.git
+cd grpc
+git remote add eventlet https://github.com/Akrog/grpc.git
+git fetch eventlet eventlet
+git merge eventlet/eventlet
+```
+
 gRPC - An RPC library and framework
 ===================================
 
