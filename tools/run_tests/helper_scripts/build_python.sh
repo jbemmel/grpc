@@ -182,6 +182,9 @@ case "$VENV" in
   *gevent*)
   pip_install -U gevent
   ;;
+  *eventlet*)
+  $VENV_PYTHON -m pip install -U eventlet
+  ;;
 esac
 
 

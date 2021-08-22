@@ -59,6 +59,7 @@ include "_cygrpc/_hooks.pyx.pxi"
 include "_cygrpc/iomgr.pyx.pxi"
 
 include "_cygrpc/grpc_gevent.pyx.pxi"
+include "_cygrpc/grpc_eventlet.pyx.pxi"
 
 include "_cygrpc/thread.pyx.pxi"
 
