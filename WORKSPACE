@@ -114,11 +114,10 @@ rbe_autoconfig(
 
 load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
 
-# JvB since we forked the repo, updated @com_github_grpc_grpc -> @com_github_jbemmel_grpc
-# Bad to have such dependency on repo URL
+# JvB since we forked the repo, update @com_github_grpc_grpc -> @com_github_jbemmel_grpc?
 pip_import(
     name = "grpc_python_dependencies",
-    requirements = "@com_github_jbemmel_grpc//:requirements.bazel.txt",
+    requirements = "@com_github_grpc_grpc//:requirements.bazel.txt",
 )
 
 load("@grpc_python_dependencies//:requirements.bzl", "pip_install")
