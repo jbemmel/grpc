@@ -125,7 +125,7 @@ rbe_autoconfig(
 
 #pip_install()
 
-load("@rules_python//python:pip.bzl", "pip_install")
+load("@io_bazel_rules_python//python:pip.bzl", "pip_install")
 
 # Create a central external repo, @my_deps, that contains Bazel targets for all the
 # third-party packages specified in the requirements.txt file.
