@@ -589,7 +589,7 @@ def e_poll_timeout(waiter):
         pass
 
 
-cdef void eventlet_run_poll(size_t timeout_ms) with gil:
+cdef grpc_error* eventlet_run_poll(size_t timeout_ms) with gil:
     """Wait for completion of any of the callbacks."""
     global e_poller_is_set
 
@@ -620,6 +620,7 @@ cdef void eventlet_run_poll(size_t timeout_ms) with gil:
             raise
 
     e_poller_is_set = 0
+    return GRPC_ERROR_NONE;
 
 
 ###################
