@@ -112,24 +112,25 @@ rbe_autoconfig(
     ),
 )
 
-# load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
+load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
 
-#pip_import(
-#    name = "grpc_python_dependencies",
-#    requirements = "@com_github_grpc_grpc//:requirements.bazel.txt",
-#)
+pip_import(
+    name = "grpc_python_dependencies",
+    requirements = "@com_github_grpc_grpc//:requirements.bazel.txt",
+)
 
-#load("@grpc_python_dependencies//:requirements.bzl", "pip_install")
+load("@grpc_python_dependencies//:requirements.bzl", "pip_install")
 
-#pip_repositories()
+pip_repositories()
 
-#pip_install()
+pip_install()
 
-load("@io_bazel_rules_python//python:pip.bzl", "pip_install")
+# JvB tried to fix CentOS build, fails
+# load("@io_bazel_rules_python//python:pip.bzl", "pip_install")
 
 # Create a central external repo, @my_deps, that contains Bazel targets for all the
 # third-party packages specified in the requirements.txt file.
-pip_install(
-   name = "grpc_python_dependencies",
-   requirements = "@com_github_grpc_grpc//:requirements.bazel.txt",
-)
+# pip_install(
+#   name = "grpc_python_dependencies",
+#   requirements = "@com_github_grpc_grpc//:requirements.bazel.txt",
+#)
