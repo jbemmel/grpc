@@ -52,7 +52,11 @@ def _parallel_compile(self,
             src, ext = build[obj]
         except KeyError:
             return
-        self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+        try:
+           self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+        except Exception as e:
+           print(e)
+           raise e
 
     # run compilation of individual files in parallel
     import multiprocessing.pool
