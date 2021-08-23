@@ -35,5 +35,5 @@ cdef class EventletSocketWrapper:
 
 cdef class EventletResolveWrapper:
     cdef grpc_custom_resolver *c_resolver
-    cdef char* c_host
-    cdef char* c_port
+    cdef const char* c_host
+    cdef const char* c_port
