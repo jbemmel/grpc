@@ -42,8 +42,9 @@ def _parallel_compile(self,
                       depends=None):
     # setup the same way as distutils.ccompiler.CCompiler
     # https://github.com/python/cpython/blob/31368a4f0e531c19affe2a1becd25fc316bc7501/Lib/distutils/ccompiler.py#L564
+    # JvB str(output_dir) -> output_dir
     macros, objects, extra_postargs, pp_opts, build = self._setup_compile(
-        str(output_dir), macros, include_dirs, sources, depends, extra_postargs)
+        output_dir, macros, include_dirs, sources, depends, extra_postargs)
     cc_args = self._get_cc_args(pp_opts, debug, extra_preargs)
 
     def _compile_single_file(obj):
