@@ -431,7 +431,7 @@ cdef void eventlet_socket_resolve_async(grpc_custom_resolver* r, char* host,
     eventlet_spawn(eventlet_socket_resolve_async_callback, rw)
 
 
-cdef grpc_error* eventlet_socket_resolve(char* host, char* port,
+cdef grpc_error* eventlet_socket_resolve(const char* host, const char* port,
                                          grpc_resolved_addresses** res
                                          ) with gil:
     try:
