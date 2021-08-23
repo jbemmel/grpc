@@ -423,8 +423,8 @@ cdef eventlet_socket_resolve_async_callback(
                                      socket_error('getaddrinfo', str(exc)))
 
 
-cdef void eventlet_socket_resolve_async(grpc_custom_resolver* r, char* host,
-                                        char* port) with gil:
+cdef void eventlet_socket_resolve_async(grpc_custom_resolver* r, const char* host,
+                                        const char* port) with gil:
     rw = EventletResolveWrapper()
     rw.c_resolver = r
     rw.c_host, rw.c_port = host, port
