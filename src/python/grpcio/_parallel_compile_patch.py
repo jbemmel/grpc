@@ -55,7 +55,8 @@ def _parallel_compile(self,
         try:
            self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
         except Exception as e:
-           print(e)
+           import sys
+           sys.stderr.write(e)
            raise e
 
     # run compilation of individual files in parallel
